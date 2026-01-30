@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploitation de vulnérabilités RCE - Pentest Hacks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a:focus, button:focus, input:focus {
+            outline: 3px solid #0d6efd !important;
+            outline-offset: 2px !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+<header class="bg-dark py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <img src="logo.png" alt="Logo" width="56" height="56" class="me-2">
+            <h1 class="text-white h4 mb-0">Pentest Hacks</h1>
+        </div>
+        <a href="index.html" class="btn btn-outline-light btn-sm" aria-label="Retour à l'accueil">Accueil</a>
+    </div>
+</header>
+
+<main class="container my-5">
+    <article>
+        <header class="mb-4">
+            <h2>Exploitation de vulnérabilités RCE</h2>
+            <img src="rce.png" alt="Schéma illustrant une attaque RCE" class="img-fluid mb-3" style="max-width: 400px;">
+            <p class="text-muted">Publié le 28 janvier 2026 par Lilian</p>
+        </header>
+
+        <section class="mb-4">
+            <p>
+                Une vulnérabilité RCE (Remote Code Execution) permet à un attaquant d'exécuter du code
+                arbitraire sur un système distant. C'est l'une des vulnérabilités les plus critiques
+                car elle peut donner à un attaquant un contrôle total sur le système compromis.
+            </p>
+        </section>
+
+        <section class="mb-4">
+            <h3 class="h5">Vecteurs d'exploitation RCE</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Vecteur</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Conséquences</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Command Injection</td>
+                        <td>Injection de commandes système via des entrées utilisateur mal validées</td>
+                        <td>Exécution de commandes shell arbitraires</td>
+                    </tr>
+                    <tr>
+                        <td>Deserialization</td>
+                        <td>Exploitation de la désérialisation d'objets non fiables</td>
+                        <td>Exécution de code lors de la désérialisation</td>
+                    </tr>
+                    <tr>
+                        <td>File Upload</td>
+                        <td>Upload de fichiers malveillants (scripts, webshells) sans validation appropriée</td>
+                        <td>Accès backdoor au serveur</td>
+                    </tr>
+                    <tr>
+                        <td>Template Injection</td>
+                        <td>Injection de code dans les moteurs de templates (Jinja2, Twig, etc.)</td>
+                        <td>Exécution de code côté serveur</td>
+                    </tr>
+                    <tr>
+                        <td>Eval Injection</td>
+                        <td>Exploitation de fonctions eval() avec des entrées contrôlables</td>
+                        <td>Exécution directe de code malveillant</td>
+                    </tr>
+                    </tbody>
+                    <tfoot class="table-light">
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <em>Source : <a href="https://portswigger.net/web-security/os-command-injection" target="_blank" rel="noopener noreferrer" aria-label="Vulnérabilités RCE sur PortSwigger">PortSwigger - OS Command Injection</a></em>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-4">
+            <h3 class="h5">Prévention</h3>
+            <p>
+                Pour se protéger contre les vulnérabilités RCE, il est crucial de valider et sanitiser
+                toutes les entrées utilisateur, d'éviter l'utilisation de fonctions dangereuses comme
+                eval(), d'implémenter une whitelist stricte pour les uploads de fichiers, d'utiliser
+                des API sécurisées plutôt que des commandes shell, et de maintenir tous les composants
+                à jour.
+            </p>
+        </section>
+    </article>
+
+    <hr class="my-5">
+
+    <section>
+        <h3 id="comments" class="h4 mb-4">Commentaires (3)</h3>
+
+        <div class="mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Nathan Mercier</strong>
+                <span class="text-muted small">29 janvier 2026</span>
+            </div>
+            <p>
+                Les RCE sont vraiment les vulnérabilités les plus dangereuses. Un contrôle total du serveur, c'est terrifiant !
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Sarah Blanc</strong>
+                <span class="text-muted small">29 janvier 2026</span>
+            </div>
+            <p>
+                La désérialisation est souvent négligée. Merci d'en parler !
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Maxime Perrin</strong>
+                <span class="text-muted small">30 janvier 2026</span>
+            </div>
+            <p>
+                Article très complet. J'ajouterais aussi l'importance du principe du moindre privilège pour limiter les dégâts.
+            </p>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="card-title h5">Ajouter un commentaire</h4>
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="comment-name" class="form-label">Nom</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="comment-name"
+                                name="name"
+                                required
+                                aria-label="Votre nom"
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <label for="comment-text" class="form-label">Commentaire</label>
+                        <textarea
+                                class="form-control"
+                                id="comment-text"
+                                name="comment"
+                                rows="4"
+                                required
+                                aria-label="Votre commentaire"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-label="Publier le commentaire">
+                        Publier
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-light py-3">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2026 - Blog fictif</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

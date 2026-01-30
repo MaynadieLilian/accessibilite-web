@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross-Site Scripting (XSS) - Pentest Hacks</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    a:focus, button:focus, input:focus {
+      outline: 3px solid #0d6efd !important;
+      outline-offset: 2px !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+<body>
+<header class="bg-dark py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="logo.png" alt="Logo" width="56" height="56" class="me-2">
+      <h1 class="text-white h4 mb-0">Pentest Hacks</h1>
+    </div>
+    <a href="index.html" class="btn btn-outline-light btn-sm" aria-label="Retour à l'accueil">Accueil</a>
+  </div>
+</header>
+
+<main class="container my-5">
+  <article>
+    <header class="mb-4">
+      <h2>Cross-Site Scripting (XSS)</h2>
+        <img src="xxs.png" alt="Schéma illustrant une attaque XSS" class="img-fluid mb-3" style="max-width: 400px;">
+      <p class="text-muted">Publié le 18 janvier 2026 par Lilian</p>
+    </header>
+
+    <section class="mb-4">
+      <p>
+        Le Cross-Site Scripting (XSS) est une vulnérabilité de sécurité qui permet à un attaquant
+        d'injecter du code malveillant (généralement JavaScript) dans des pages web vues par
+        d'autres utilisateurs. Cette attaque exploite la confiance qu'un utilisateur a envers
+        un site web particulier.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h3 class="h5">Types d'attaques XSS</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+          <tr>
+            <th scope="col">Type d'attaque</th>
+            <th scope="col">Description</th>
+            <th scope="col">Impact</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>XSS Réfléchi (Reflected)</td>
+            <td>Le script malveillant est immédiatement renvoyé par le serveur dans la réponse HTTP</td>
+            <td>Vol de session, redirection malveillante</td>
+          </tr>
+          <tr>
+            <td>XSS Stocké (Stored)</td>
+            <td>Le script est stocké de façon permanente sur le serveur (base de données, forum, commentaire)</td>
+            <td>Compromission massive d'utilisateurs</td>
+          </tr>
+          <tr>
+            <td>XSS DOM-based</td>
+            <td>La vulnérabilité se trouve dans le code côté client, le payload n'est jamais envoyé au serveur</td>
+            <td>Manipulation du DOM, vol d'informations</td>
+          </tr>
+          <tr>
+            <td>XSS Blind</td>
+            <td>Le payload XSS est exécuté dans un contexte où l'attaquant ne voit pas directement le résultat</td>
+            <td>Exfiltration de données d'administration</td>
+          </tr>
+          </tbody>
+          <tfoot class="table-light">
+          <tr>
+            <td colspan="3" class="text-center">
+              <em>Source : <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" rel="noopener noreferrer" aria-label="Types d'attaques XSS sur OWASP">OWASP - Cross Site Scripting</a></em>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h3 class="h5">Prévention</h3>
+      <p>
+        Pour se protéger contre les attaques XSS, il est essentiel d'encoder correctement les
+        sorties HTML, d'utiliser une Content Security Policy (CSP), de valider et nettoyer
+        toutes les entrées utilisateur, et d'utiliser des frameworks modernes qui échappent
+        automatiquement les données.
+      </p>
+    </section>
+  </article>
+
+  <hr class="my-5">
+
+  <section>
+    <h3 id="comments" class="h4 mb-4">Commentaires (3)</h3>
+
+    <div class="mb-4">
+      <div class="d-flex justify-content-between mb-2">
+        <strong>Julie Moreau</strong>
+        <span class="text-muted small">19 janvier 2026</span>
+      </div>
+      <p>
+        Très bon article explicatif. La distinction entre XSS réfléchi et stocké est bien claire.
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <div class="d-flex justify-content-between mb-2">
+        <strong>Pierre Durand</strong>
+        <span class="text-muted small">20 janvier 2026</span>
+      </div>
+      <p>
+        J'aurais aimé voir quelques exemples concrets de payloads XSS pour mieux comprendre.
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <div class="d-flex justify-content-between mb-2">
+        <strong>Emma Laurent</strong>
+        <span class="text-muted small">21 janvier 2026</span>
+      </div>
+      <p>
+        La Content Security Policy est vraiment un must-have en 2026. Merci pour le rappel !
+      </p>
+    </div>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <h4 class="card-title h5">Ajouter un commentaire</h4>
+        <form action="#" method="post">
+          <div class="mb-3">
+            <label for="comment-name" class="form-label">Nom</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="comment-name"
+                    name="name"
+                    required
+                    aria-label="Votre nom"
+            >
+          </div>
+          <div class="mb-3">
+            <label for="comment-text" class="form-label">Commentaire</label>
+            <textarea
+                    class="form-control"
+                    id="comment-text"
+                    name="comment"
+                    rows="4"
+                    required
+                    aria-label="Votre commentaire"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" aria-label="Publier le commentaire">
+            Publier
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-light py-3">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2026 - Blog fictif</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

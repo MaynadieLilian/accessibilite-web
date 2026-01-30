@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attaques CSRF - Pentest Hacks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a:focus, button:focus, input:focus {
+            outline: 3px solid #0d6efd !important;
+            outline-offset: 2px !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+<header class="bg-dark py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <img src="logo.png" alt="Logo" width="56" height="56" class="me-2">
+            <h1 class="text-white h4 mb-0">Pentest Hacks</h1>
+        </div>
+        <a href="index.html" class="btn btn-outline-light btn-sm" aria-label="Retour à l'accueil">Accueil</a>
+    </div>
+</header>
+
+<main class="container my-5">
+    <article>
+        <header class="mb-4">
+            <h2>Attaques CSRF</h2>
+            <img src="csrf.png" alt="Schéma illustrant une attaque CSRF" class="img-fluid mb-3" style="max-width: 400px;">
+            <p class="text-muted">Publié le 25 janvier 2026 par Lilian</p>
+        </header>
+
+        <section class="mb-4">
+            <p>
+                Une attaque CSRF (Cross-Site Request Forgery) force un utilisateur authentifié à
+                exécuter des actions non désirées sur une application web dans laquelle il est
+                actuellement authentifié. L'attaquant exploite la confiance qu'une application
+                web a envers le navigateur de l'utilisateur.
+            </p>
+        </section>
+
+        <section class="mb-4">
+            <h3 class="h5">Types et vecteurs d'attaques CSRF</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Type/Vecteur</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Exemples d'actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>GET-based CSRF</td>
+                        <td>Exploite les requêtes GET pour effectuer des actions (mauvaise pratique du site)</td>
+                        <td>Transfert d'argent, modification de paramètres</td>
+                    </tr>
+                    <tr>
+                        <td>POST-based CSRF</td>
+                        <td>Utilise un formulaire caché qui soumet automatiquement une requête POST</td>
+                        <td>Changement de mot de passe, suppression de compte</td>
+                    </tr>
+                    <tr>
+                        <td>JSON-based CSRF</td>
+                        <td>Cible les API REST qui acceptent des requêtes JSON sans validation CSRF</td>
+                        <td>Modification de données via API</td>
+                    </tr>
+                    <tr>
+                        <td>Login CSRF</td>
+                        <td>Force l'utilisateur à se connecter avec les identifiants de l'attaquant</td>
+                        <td>Collecte d'informations sensibles</td>
+                    </tr>
+                    </tbody>
+                    <tfoot class="table-light">
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <em>Source : <a href="https://owasp.org/www-community/attacks/csrf" target="_blank" rel="noopener noreferrer" aria-label="Attaques CSRF sur OWASP">OWASP - Cross-Site Request Forgery</a></em>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-4">
+            <h3 class="h5">Prévention</h3>
+            <p>
+                Pour se protéger contre les attaques CSRF, il est essentiel d'utiliser des tokens
+                CSRF uniques pour chaque session et requête, d'implémenter le SameSite cookie attribute,
+                de vérifier l'en-tête Origin/Referer, et d'utiliser l'authentification multi-facteurs
+                pour les actions sensibles.
+            </p>
+        </section>
+    </article>
+
+    <hr class="my-5">
+
+    <section>
+        <h3 id="comments" class="h4 mb-4">Commentaires (3)</h3>
+
+        <div class="mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Léa Fontaine</strong>
+                <span class="text-muted small">26 janvier 2026</span>
+            </div>
+            <p>
+                Le Login CSRF est particulièrement sournois. Je ne connaissais pas cette technique avant de lire cet article !
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Hugo Lemoine</strong>
+                <span class="text-muted small">27 janvier 2026</span>
+            </div>
+            <p>
+                Les tokens CSRF sont vraiment essentiels. Tous les frameworks modernes devraient les implémenter par défaut.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Chloé Dubois</strong>
+                <span class="text-muted small">28 janvier 2026</span>
+            </div>
+            <p>
+                Excellent article ! La distinction entre les différents types est très claire.
+            </p>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="card-title h5">Ajouter un commentaire</h4>
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="comment-name" class="form-label">Nom</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="comment-name"
+                                name="name"
+                                required
+                                aria-label="Votre nom"
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <label for="comment-text" class="form-label">Commentaire</label>
+                        <textarea
+                                class="form-control"
+                                id="comment-text"
+                                name="comment"
+                                rows="4"
+                                required
+                                aria-label="Votre commentaire"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-label="Publier le commentaire">
+                        Publier
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-light py-3">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2026 - Blog fictif</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
