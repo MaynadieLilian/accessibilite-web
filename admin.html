@@ -22,7 +22,7 @@
     <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
             <a href="index.html">
-                <img src="logo.png" width="56" height="56" class="me-2" aria-label="Retour à l'acceuil">
+                <img src="logo.png" width="56" height="56" class="me-2" aria-label="Retour à l'accueil">
             </a>
             <div class="text-white h4 mb-0">Pentest Hacks</div>
         </div>
@@ -53,7 +53,6 @@
                                     id="username"
                                     name="username"
                                     required
-                                    aria-label="Nom d'utilisateur"
                                     autocomplete="email"
                             >
                         </div>
@@ -68,14 +67,13 @@
                                         id="password"
                                         name="password"
                                         required
-                                        aria-label="Mot de passe"
                                 >
 
                                 <button
                                         class="btn btn-outline-secondary"
                                         type="button"
                                         onclick="togglePassword()"
-                                        aria-label="Afficher ou masquer le mot de passe"
+                                        aria-label="Afficher le mot de passe"
                                 >
                                     <i class="bi bi-eye"></i>
                                 </button>
@@ -124,12 +122,12 @@
             passwordInput.type = "text";
             icon.classList.remove("bi-eye");
             icon.classList.add("bi-eye-slash");
-            toggleButton.setAttribute("aria-label", "Masquer le mot de passe");
+            toggleButton.setAttribute("aria-label", "le mot de passe est affiché");
         } else {
             passwordInput.type = "password";
             icon.classList.remove("bi-eye-slash");
             icon.classList.add("bi-eye");
-            toggleButton.setAttribute("aria-label", "Afficher le mot de passe");
+            toggleButton.setAttribute("aria-label", "le mot de passe est masqué");
         }
     }
 </script>
