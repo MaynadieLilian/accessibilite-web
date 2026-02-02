@@ -117,11 +117,19 @@
 <script>
     function togglePassword() {
         const passwordInput = document.getElementById("password");
+        const toggleButton = document.querySelector('[onclick="togglePassword()"]');
+        const icon = toggleButton.querySelector('i');
 
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
+            icon.classList.remove("bi-eye");
+            icon.classList.add("bi-eye-slash");
+            toggleButton.setAttribute("aria-label", "Masquer le mot de passe");
         } else {
             passwordInput.type = "password";
+            icon.classList.remove("bi-eye-slash");
+            icon.classList.add("bi-eye");
+            toggleButton.setAttribute("aria-label", "Afficher le mot de passe");
         }
     }
 </script>
