@@ -46,14 +46,14 @@
 
                     <form action="#" method="post">
                         <div class="mb-3">
-                            <label for="username" class="form-label">Nom d'utilisateur</label>
+                            <label for="email" class="form-label">Nom d'utilisateur</label>
                             <input
                                     type="email"
                                     class="form-control"
-                                    id="username"
-                                    name="username"
+                                    id="email"
+                                    name="email"
                                     required
-                                    autocomplete="email"
+                                    autocomplete="username"
                             >
                         </div>
 
@@ -67,6 +67,7 @@
                                         id="password"
                                         name="password"
                                         required
+                                        autocomplete="current-password"
                                 >
 
                                 <button
@@ -74,6 +75,7 @@
                                         type="button"
                                         onclick="togglePassword()"
                                         aria-label="Afficher le mot de passe"
+                                        aria-pressed="false"
                                 >
                                     <i class="bi bi-eye"></i>
                                 </button>
@@ -125,11 +127,13 @@
             icon.classList.remove("bi-eye");
             icon.classList.add("bi-eye-slash");
             toggleButton.setAttribute("aria-label", "le mot de passe est affiché");
+            toggleButton.setAttribute("aria-pressed", "true");
         } else {
             passwordInput.type = "password";
             icon.classList.remove("bi-eye-slash");
             icon.classList.add("bi-eye");
             toggleButton.setAttribute("aria-label", "le mot de passe est masqué");
+            toggleButton.setAttribute("aria-pressed", "false");
         }
     }
 </script>
