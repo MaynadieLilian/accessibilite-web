@@ -46,55 +46,56 @@
             <p class="text-muted">Publié le <time datetime="2026-01-25">25 janvier 2026</time> par Lilian </p>
 
         <section class="mb-4">
+            <h2 class="h4 mb-4">Explication</h2>
             <p>
                 Une attaque CSRF (Cross-Site Request Forgery) force un utilisateur authentifié à
                 exécuter des actions non désirées sur une application web dans laquelle il est
                 actuellement authentifié. L'attaquant exploite la confiance qu'une application
                 web a envers le navigateur de l'utilisateur.
             </p>
-        </section>
 
-        <section class="mb-4">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                    <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Types et vecteurs d'attaques CSRF</caption>
-                    <thead class="table-dark">
-                    <tr>
-                        <th scope="col">Type/Vecteur</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Exemples d'actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>GET-based CSRF</td>
-                        <td>Exploite les requêtes GET pour effectuer des actions (mauvaise pratique du site)</td>
-                        <td>Transfert d'argent, modification de paramètres</td>
-                    </tr>
-                    <tr>
-                        <td>POST-based CSRF</td>
-                        <td>Utilise un formulaire caché qui soumet automatiquement une requête POST</td>
-                        <td>Changement de mot de passe, suppression de compte</td>
-                    </tr>
-                    <tr>
-                        <td>JSON-based CSRF</td>
-                        <td>Cible les API REST qui acceptent des requêtes JSON sans validation CSRF</td>
-                        <td>Modification de données via API</td>
-                    </tr>
-                    <tr>
-                        <td>Login CSRF</td>
-                        <td>Force l'utilisateur à se connecter avec les identifiants de l'attaquant</td>
-                        <td>Collecte d'informations sensibles</td>
-                    </tr>
-                    </tbody>
-                    <tfoot class="table-light">
-                    <tr>
-                        <td colspan="3" class="text-center">
-                            <em>Source : <a href="https://owasp.org/www-community/attacks/csrf" target="_blank" rel="noopener noreferrer" aria-label="Attaques CSRF sur OWASP" style="color:#084298; text-decoration:underline;">OWASP - Cross-Site Request Forgery</a></em>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
+            <div class="mb-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Types et vecteurs d'attaques CSRF</caption>
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Type/Vecteur</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Exemples d'actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>GET-based CSRF</td>
+                            <td>Exploite les requêtes GET pour effectuer des actions (mauvaise pratique du site)</td>
+                            <td>Transfert d'argent, modification de paramètres</td>
+                        </tr>
+                        <tr>
+                            <td>POST-based CSRF</td>
+                            <td>Utilise un formulaire caché qui soumet automatiquement une requête POST</td>
+                            <td>Changement de mot de passe, suppression de compte</td>
+                        </tr>
+                        <tr>
+                            <td>JSON-based CSRF</td>
+                            <td>Cible les API REST qui acceptent des requêtes JSON sans validation CSRF</td>
+                            <td>Modification de données via API</td>
+                        </tr>
+                        <tr>
+                            <td>Login CSRF</td>
+                            <td>Force l'utilisateur à se connecter avec les identifiants de l'attaquant</td>
+                            <td>Collecte d'informations sensibles</td>
+                        </tr>
+                        </tbody>
+                        <tfoot class="table-light">
+                        <tr>
+                            <td colspan="3" class="text-center">
+                                <em>Source : <a href="https://owasp.org/www-community/attacks/csrf" target="_blank" rel="noopener noreferrer" aria-label="Attaques CSRF sur OWASP" style="color:#084298; text-decoration:underline;">OWASP - Cross-Site Request Forgery</a></em>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </section>
 

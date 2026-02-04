@@ -48,62 +48,64 @@
             <p class="text-muted">Publié le <time datetime="2026-01-15">15 janvier 2026</time> par Louis </p>
 
         <section class="mb-4">
+            <h2 class="h4 mb-4">Explication</h2>
             <p>
                 L'injection SQL est une technique d'attaque qui exploite une vulnérabilité de sécurité
                 dans la couche base de données d'une application. Cette vulnérabilité se produit lorsque
                 les entrées utilisateur ne sont pas correctement validées ou échappées avant d'être
                 utilisées dans une requête SQL.
             </p>
-        </section>
 
-        <section class="mb-4">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                    <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Types d'injections SQL et leurs impacts </caption>
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">Type d'injection</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Impact sur la base de données</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>In-band SQLi (Error-based)</td>
-                        <td>Exploite les messages d'erreur de la base de données pour obtenir des informations sur sa structure</td>
-                        <td>Révélation de la structure des tables et colonnes</td>
-                    </tr>
-                    <tr>
-                        <td>In-band SQLi (Union-based)</td>
-                        <td>Utilise l'opérateur UNION SQL pour combiner les résultats de plusieurs requêtes SELECT</td>
-                        <td>Extraction massive de données sensibles</td>
-                    </tr>
-                    <tr>
-                        <td>Inferential SQLi (Boolean-based)</td>
-                        <td>Envoie des requêtes qui forcent l'application à retourner un résultat différent selon TRUE ou FALSE</td>
-                        <td>Extraction lente des données bit par bit</td>
-                    </tr>
-                    <tr>
-                        <td>Inferential SQLi (Time-based)</td>
-                        <td>Force la base de données à attendre un temps spécifié avant de répondre pour déduire des informations</td>
-                        <td>Surcharge du serveur et extraction d'informations</td>
-                    </tr>
-                    <tr>
-                        <td>Out-of-band SQLi</td>
-                        <td>L'attaquant ne peut pas utiliser le même canal pour lancer l'attaque et récupérer les résultats</td>
-                        <td>Exfiltration de données via DNS ou HTTP</td>
-                    </tr>
-                    </tbody>
-                    <tfoot class="table-light">
-                    <tr>
-                        <td colspan="3" class="text-center">
-                            <em>Source : <a href="https://www.acunetix.com/websitesecurity/sql-injection2/" target="_blank" rel="noopener noreferrer" aria-label="Types d'injections SQL sur Acunetix" style="color:#084298; text-decoration:underline;">Acunetix - Types of SQL Injection</a></em>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
+            <div class="mb-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Types d'injections SQL et leurs impacts </caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Type d'injection</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Impact sur la base de données</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>In-band SQLi (Error-based)</td>
+                            <td>Exploite les messages d'erreur de la base de données pour obtenir des informations sur sa structure</td>
+                            <td>Révélation de la structure des tables et colonnes</td>
+                        </tr>
+                        <tr>
+                            <td>In-band SQLi (Union-based)</td>
+                            <td>Utilise l'opérateur UNION SQL pour combiner les résultats de plusieurs requêtes SELECT</td>
+                            <td>Extraction massive de données sensibles</td>
+                        </tr>
+                        <tr>
+                            <td>Inferential SQLi (Boolean-based)</td>
+                            <td>Envoie des requêtes qui forcent l'application à retourner un résultat différent selon TRUE ou FALSE</td>
+                            <td>Extraction lente des données bit par bit</td>
+                        </tr>
+                        <tr>
+                            <td>Inferential SQLi (Time-based)</td>
+                            <td>Force la base de données à attendre un temps spécifié avant de répondre pour déduire des informations</td>
+                            <td>Surcharge du serveur et extraction d'informations</td>
+                        </tr>
+                        <tr>
+                            <td>Out-of-band SQLi</td>
+                            <td>L'attaquant ne peut pas utiliser le même canal pour lancer l'attaque et récupérer les résultats</td>
+                            <td>Exfiltration de données via DNS ou HTTP</td>
+                        </tr>
+                        </tbody>
+                        <tfoot class="table-light">
+                        <tr>
+                            <td colspan="3" class="text-center">
+                                <em>Source : <a href="https://www.acunetix.com/websitesecurity/sql-injection2/" target="_blank" rel="noopener noreferrer" aria-label="Types d'injections SQL sur Acunetix" style="color:#084298; text-decoration:underline;">Acunetix - Types of SQL Injection</a></em>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </section>
+
 
         <section class="mb-4">
             <h2 class="h5">Prévention</h2>

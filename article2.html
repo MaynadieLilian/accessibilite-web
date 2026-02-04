@@ -46,55 +46,55 @@
       <p class="text-muted">Publié le <time datetime="2026-01-18">18 janvier 2026</time> par Lilian </p>
 
     <section class="mb-4">
+      <h2 class="h4 mb-4">Explication</h2>
       <p>
         Le Cross-Site Scripting (XSS) est une vulnérabilité de sécurité qui permet à un attaquant
         d'injecter du code malveillant (généralement JavaScript) dans des pages web vues par
         d'autres utilisateurs. Cette attaque exploite la confiance qu'un utilisateur a envers
         un site web particulier.
       </p>
-    </section>
-
-    <section class="mb-4">
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-          <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Types de XSS courantes et leurs impacts </caption>
-          <thead class="table-dark">
-          <tr>
-            <th scope="col">Type d'attaque</th>
-            <th scope="col">Description</th>
-            <th scope="col">Impact</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>XSS Réfléchi (Reflected)</td>
-            <td>Le script malveillant est immédiatement renvoyé par le serveur dans la réponse HTTP</td>
-            <td>Vol de session, redirection malveillante</td>
-          </tr>
-          <tr>
-            <td>XSS Stocké (Stored)</td>
-            <td>Le script est stocké de façon permanente sur le serveur (base de données, forum, commentaire)</td>
-            <td>Compromission massive d'utilisateurs</td>
-          </tr>
-          <tr>
-            <td>XSS DOM-based</td>
-            <td>La vulnérabilité se trouve dans le code côté client, le payload n'est jamais envoyé au serveur</td>
-            <td>Manipulation du DOM, vol d'informations</td>
-          </tr>
-          <tr>
-            <td>XSS Blind</td>
-            <td>Le payload XSS est exécuté dans un contexte où l'attaquant ne voit pas directement le résultat</td>
-            <td>Exfiltration de données d'administration</td>
-          </tr>
-          </tbody>
-          <tfoot class="table-light">
-          <tr>
-            <td colspan="3" class="text-center">
-              <em>Source : <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" rel="noopener noreferrer" aria-label="Types d'attaques XSS sur OWASP"  style="color:#084298; text-decoration:underline;">OWASP - Cross Site Scripting</a></em>
-            </td>
-          </tr>
-          </tfoot>
-        </table>
+      <div class="mb-4">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Types de XSS courantes et leurs impacts </caption>
+            <thead class="table-dark">
+            <tr>
+              <th scope="col">Type d'attaque</th>
+              <th scope="col">Description</th>
+              <th scope="col">Impact</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>XSS Réfléchi (Reflected)</td>
+              <td>Le script malveillant est immédiatement renvoyé par le serveur dans la réponse HTTP</td>
+              <td>Vol de session, redirection malveillante</td>
+            </tr>
+            <tr>
+              <td>XSS Stocké (Stored)</td>
+              <td>Le script est stocké de façon permanente sur le serveur (base de données, forum, commentaire)</td>
+              <td>Compromission massive d'utilisateurs</td>
+            </tr>
+            <tr>
+              <td>XSS DOM-based</td>
+              <td>La vulnérabilité se trouve dans le code côté client, le payload n'est jamais envoyé au serveur</td>
+              <td>Manipulation du DOM, vol d'informations</td>
+            </tr>
+            <tr>
+              <td>XSS Blind</td>
+              <td>Le payload XSS est exécuté dans un contexte où l'attaquant ne voit pas directement le résultat</td>
+              <td>Exfiltration de données d'administration</td>
+            </tr>
+            </tbody>
+            <tfoot class="table-light">
+            <tr>
+              <td colspan="3" class="text-center">
+                <em>Source : <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" rel="noopener noreferrer" aria-label="Types d'attaques XSS sur OWASP"  style="color:#084298; text-decoration:underline;">OWASP - Cross Site Scripting</a></em>
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     </section>
 

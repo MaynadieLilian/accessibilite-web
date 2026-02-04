@@ -46,61 +46,63 @@
             <p class="text-muted">Publié le <time datetime="2026-01-28">28 janvier 2026</time> par Lilian </p>
 
         <section class="mb-4">
+            <h2 class="h4 mb-4">Explication</h2>
             <p>
                 Une vulnérabilité RCE (Remote Code Execution) permet à un attaquant d'exécuter du code
                 arbitraire sur un système distant. C'est l'une des vulnérabilités les plus critiques
                 car elle peut donner à un attaquant un contrôle total sur le système compromis.
             </p>
-        </section>
 
-        <section class="mb-4">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                    <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Vecteurs d'exploitation RCE et leurs conséquences</caption>
-                    <thead class="table-dark">
-                    <tr>
-                        <th scope="col">Vecteur</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Conséquences</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Command Injection</td>
-                        <td>Injection de commandes système via des entrées utilisateur mal validées</td>
-                        <td>Exécution de commandes shell arbitraires</td>
-                    </tr>
-                    <tr>
-                        <td>Deserialization</td>
-                        <td>Exploitation de la désérialisation d'objets non fiables</td>
-                        <td>Exécution de code lors de la désérialisation</td>
-                    </tr>
-                    <tr>
-                        <td>File Upload</td>
-                        <td>Upload de fichiers malveillants (scripts, webshells) sans validation appropriée</td>
-                        <td>Accès backdoor au serveur</td>
-                    </tr>
-                    <tr>
-                        <td>Template Injection</td>
-                        <td>Injection de code dans les moteurs de templates (Jinja2, Twig, etc.)</td>
-                        <td>Exécution de code côté serveur</td>
-                    </tr>
-                    <tr>
-                        <td>Eval Injection</td>
-                        <td>Exploitation de fonctions eval() avec des entrées contrôlables</td>
-                        <td>Exécution directe de code malveillant</td>
-                    </tr>
-                    </tbody>
-                    <tfoot class="table-light">
-                    <tr>
-                        <td colspan="3" class="text-center">
-                            <em>Source : <a href="https://portswigger.net/web-security/os-command-injection" target="_blank" rel="noopener noreferrer" aria-label="Vulnérabilités RCE sur PortSwigger"  style="color:#084298; text-decoration:underline;" >PortSwigger - OS Command Injection</a></em>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
+            <div class="mb-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <caption style="caption-side: top; font-size: 1.25rem; font-weight: 600; color: #212529; text-align: left;">Vecteurs d'exploitation RCE et leurs conséquences</caption>
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Vecteur</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Conséquences</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Command Injection</td>
+                            <td>Injection de commandes système via des entrées utilisateur mal validées</td>
+                            <td>Exécution de commandes shell arbitraires</td>
+                        </tr>
+                        <tr>
+                            <td>Deserialization</td>
+                            <td>Exploitation de la désérialisation d'objets non fiables</td>
+                            <td>Exécution de code lors de la désérialisation</td>
+                        </tr>
+                        <tr>
+                            <td>File Upload</td>
+                            <td>Upload de fichiers malveillants (scripts, webshells) sans validation appropriée</td>
+                            <td>Accès backdoor au serveur</td>
+                        </tr>
+                        <tr>
+                            <td>Template Injection</td>
+                            <td>Injection de code dans les moteurs de templates (Jinja2, Twig, etc.)</td>
+                            <td>Exécution de code côté serveur</td>
+                        </tr>
+                        <tr>
+                            <td>Eval Injection</td>
+                            <td>Exploitation de fonctions eval() avec des entrées contrôlables</td>
+                            <td>Exécution directe de code malveillant</td>
+                        </tr>
+                        </tbody>
+                        <tfoot class="table-light">
+                        <tr>
+                            <td colspan="3" class="text-center">
+                                <em>Source : <a href="https://portswigger.net/web-security/os-command-injection" target="_blank" rel="noopener noreferrer" aria-label="Vulnérabilités RCE sur PortSwigger"  style="color:#084298; text-decoration:underline;" >PortSwigger - OS Command Injection</a></em>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </section>
+
 
         <section class="mb-4">
             <h2 class="h5">Prévention</h2>
