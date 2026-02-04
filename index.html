@@ -13,6 +13,11 @@
     </style>
 </head>
 <body>
+
+<a href="#nav" class="visually-hidden-focusable">Aller a la navigation principale</a>
+<a href="#main" class="visually-hidden-focusable">Aller au contenu principal</a>
+
+
 <header class="bg-dark py-2" aria-label="Navigation principale">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
@@ -21,18 +26,18 @@
                 <div class="text-white h4 mb-0">Pentest Hacks</div>
             </a>
         </div>
-        <div class="d-flex gap-2">
+        <nav id="nav" class="d-flex gap-2">
             <a href="index.html" class="btn btn-outline-light btn-sm" aria-label="Retour à l'accueil">
                 Accueil
             </a>
             <a href="admin.html" class="btn btn-outline-light btn-sm" aria-label="Connexion administrateur">
                 Login admin
             </a>
-        </div>
+        </nav>
     </div>
 </header>
 
-<main class="container my-5" aria-label="Liste des articles">
+<main class="container my-5" aria-label="Liste des articles" id="main">
     <h1 aria-hidden="true">Nos articles</h1>
     <br>
     <article class="d-flex flex-column flex-md-row-reverse align-items-start mb-4 border-bottom pb-3">

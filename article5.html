@@ -14,6 +14,12 @@
     </style>
 </head>
 <body>
+
+<a href="#nav" class="visually-hidden-focusable">Aller a la navigation principale</a>
+<a href="#article" class="visually-hidden-focusable">Aller au contenu de l'article</a>
+<a href="#comments" class="visually-hidden-focusable">Aller au commentaires sur l'article</a>
+<a href="#comment-form" class="visually-hidden-focusable">Aller au formulaire pour écrire un commentaire</a>
+
 <header class="bg-dark py-2" aria-label="Navigation principale">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
@@ -22,19 +28,19 @@
                 <div class="text-white h4 mb-0">Pentest Hacks</div>
             </a>
         </div>
-        <div class="d-flex gap-2">
+        <nav id="nav" class="d-flex gap-2">
             <a href="index.html" class="btn btn-outline-light btn-sm" aria-label="Retour à l'accueil">
                 Accueil
             </a>
             <a href="admin.html" class="btn btn-outline-light btn-sm" aria-label="Connexion administrateur">
                 Login admin
             </a>
-        </div>
+        </nav>
     </div>
 </header>
 
 <main class="container my-5" aria-label="Article sur les attaques RCE">
-    <article>
+    <article id="article">
             <h1>Exploitation de vulnérabilités RCE</h1>
             <img src="rce.png" class="img-fluid mb-3" style="max-width: 400px;" alt="Representation d'une RCE" aria-hidden="true">
             <p class="text-muted">Publié le <time datetime="2026-01-28">28 janvier 2026</time> par Lilian </p>
@@ -108,8 +114,8 @@
         </section>
     </article>
 
-    <section>
-        <h2 id="comments" class="h4 mb-4">Commentaires (3)</h2>
+    <section id="comments">
+        <h2 class="h4 mb-4">Commentaires (3)</h2>
 
         <div class="mb-4">
             <div class="d-flex justify-content-between mb-2">
@@ -144,7 +150,7 @@
         <div class="card mt-4">
             <div class="card-body">
                 <h3 class="card-title h5">Ajouter un commentaire</h3>
-                <form action="#" method="post">
+                <form action="#" method="post" id="comment-form">
                     <div class="mb-3">
                         <label for="comment-name" class="form-label">Nom</label>
                         <input
